@@ -19,9 +19,8 @@
                         "\nAuthors: Yang Gao, Mingdu Luo, Hongmiao Wang, Zhiwei Zhou and Dr. Zhengjiang Zhu (jiangzhu@sioc.ac.cn).",
                         "\nMaintainer: Yang Gao",
                         "\n",.gen_marks(content = 'NEWS', mark='-', nmark= nmark),
-                        "\nVersion 0.2.12 (20230924)",
-                        "\n\to Modify the colnames of the output file",
-                        "\n\to Rename the package",
+                        "\nVersion 0.2.13 (20231020)",
+                        "\n\to Debug removing features without MS2 during file checking.",
                         "\n",
                         end_mark,
                         "\n")

@@ -14,18 +14,22 @@ o fix bugs: no edge label
 o fix bugs: filtering MS2 matched pairs using n_frag_total instead of n_frag_match
 o add parallel processing function
 
+
 ## Version 0.1.03 (20220924)
 -------------
 o change parallel running function
+
 
 ## Version 0.1.04 (20221202)
 -------------
 o change consin to Manhattan MID similarity caculation methods
 
+
 ## Version 0.1.05 (20221223)
 -------------
 o change the MID similarity methods of features with same C number. 
   type II to type I
+  
   
 ## Version 0.1.06 (20230131)
 -------------
@@ -33,10 +37,12 @@ o edge annotation tolerance 0.002 Da.
 o change library table(KEGG).
 o output reaction class and freq.
 
+
 ## Version 0.2.01 (20230131)
 -------------
 o add ID results to the final table.
 o add reaction step (calculateStep)
+
 
 ## Version 0.2.02 (20230203)
 -------------
@@ -44,10 +50,12 @@ o fix output bug of MID calculation(motif source and type)
 o change library table(KEGG).simple name,redefined reaction class,C_diff
 o output C_diff.
 
+
 ## Version 0.2.03 (20230209)
 -------------
 o fix output bug of MID calculation(change same C carbon number judgement code module position,include type I and type II with same C number)
 o update delta mass lib (unique mass,more than 1)
+
 
 ## Version 0.2.04 (20230214)
 -------------
@@ -56,18 +64,22 @@ o output all reaction classes
 o add parameter to trim the mass difference table (mass_diff_freq_cut_off)
 o modify the reaction type
 
+
 ## Version 0.2.05 (20230317)
 -------------
 o debug ignore_max parameter
+
 
 ## Version 0.2.06 (20230318)
 -------------
 o Debug mass difference calculation
 o Modify output files
 
+
 ## Version 0.2.07 (20230328)
 -------------
 o Modify the output of the package
+
 
 ## Version 0.2.08 (20230420)
 -------------
@@ -75,19 +87,28 @@ o Add "|" to the "From" and "To" column
 o Modify the path of final result
 o Modify the some variates according to the inputted ID table
 
+
 ## Version 0.2.09 (20230420)
 -------------
 o Debug the polarity recognization during adding edge labels.
+
 
 ## Version 0.2.10 (20230428)
 -------------
 o Debug mz match during edge annotation.
 
+
 ## Version 0.2.11 (20230924)
 -------------
 o Add RT filter for edge annotations.
+
 
 ## Version 0.2.12 (20230924)
 -------------
 o Modify the colnames of the output file.
 o Rename the package.
+
+
+## Version 0.2.13 (20231020)
+-------------
+o Debug removing features without MS2 during file checking.

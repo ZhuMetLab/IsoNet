@@ -197,8 +197,8 @@ checkFiles <- function(dir_path = '.',
     }
 
     dir.create(file.path(dir_path, '00_intermidate_data'), showWarnings = FALSE, recursive = TRUE)
-    temp_data <- temp_data[-idx,,drop = FALSE]
-
+    # temp_data <- temp_data[-idx,,drop = FALSE](20231020)
+    temp_data <- temp_data[-idx_rm,,drop = FALSE]
     readr::write_csv(temp_data,
                      file = file.path(dir_path, '00_intermidate_data', 'trace_table_clean.csv'))
   }

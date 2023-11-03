@@ -25,23 +25,6 @@ The data folder should contain isotopologue pattern table (.csv), the identifica
 ## R script preparation
 To run the data processing, an R script named [run.R](extra/run.R) should be placed in the data folder.
 Here we provide an example. Users only need to change tracer_table_file,  ms2_file,  id_table, and sample_names . Other parameters are recommended parameters.
-
-**Import parameters**
-
-- `tracer_table_file`: the file name of isotopologue pattern table which contains the labeled fraction of each isotopologue.
-- `ms2_file`: the file name of ms2 file.
-- `id_table`: the identification table name of labeled metabolites.
-- `sample_names`: The sample names in tracer_table_file that be used to calculate isotopologue pattern similarity.
-- `mid_cutoff`: the isotopogue pattern similarity score cutoff
-- `ms2_score_cutoff`：the MSMS similarity score cutoff
-- `mid_fc`: the labeled fraction radio between the highest and the second highest isotopologues to class the type II and type III.
-- `mid_isoDegree`: The cutoff for the minimum labeling fraction of highest isotopologue in the motif.
-- `mid_min_motifLen`：In Type III, The minimum carbon number of generated motif. For example, setting it to 0.5 indicates that the carbon number of the motif should be at least 50% longer than that of the metabolite with more carbons.
-- `mid_max_motif`：In Type III, the maximum number of generated motifs.
-- `ignore_max`：In Type I, whether to consider the position of the highest isotopologue. Setting it to TRUE indicates that it is not considered, and the calculation is performed directly.
-- `scoring_approach`：The algorithm used for scoring the MSMS simlairty.
-- `mass_diff_freq_cut_off`: The threshold for delta masses used for edge annotation based on its frequency in the KEGG database.
-
   
 ```R
 library(IsoNet)
@@ -62,6 +45,24 @@ constructMIDNet(tracer_table_file = "./Result/isotopologue_pattern_table.csv",
                 ignore_max = TRUE,
                 scoring_approach = 'gnps',
                 mass_diff_freq_cut_off = 4L)
+```
+
+**Import parameters**
+
+- `tracer_table_file`: the file name of isotopologue pattern table which contains the labeled fraction of each isotopologue.
+- `ms2_file`: the file name of ms2 file.
+- `id_table`: the identification table name of labeled metabolites.
+- `sample_names`: The sample names in tracer_table_file that be used to calculate isotopologue pattern similarity.
+- `mid_cutoff`: the isotopogue pattern similarity score cutoff
+- `ms2_score_cutoff`：the MSMS similarity score cutoff
+- `mid_fc`: the labeled fraction radio between the highest and the second highest isotopologues to class the type II and type III.
+- `mid_isoDegree`: The cutoff for the minimum labeling fraction of highest isotopologue in the motif.
+- `mid_min_motifLen`：In Type III, The minimum carbon number of generated motif. For example, setting it to 0.5 indicates that the carbon number of the motif should be at least 50% longer than that of the metabolite with more carbons.
+- `mid_max_motif`：In Type III, the maximum number of generated motifs.
+- `ignore_max`：In Type I, whether to consider the position of the highest isotopologue. Setting it to TRUE indicates that it is not considered, and the calculation is performed directly.
+- `scoring_approach`：The algorithm used for scoring the MSMS simlairty.
+- `mass_diff_freq_cut_off`: The threshold for delta masses used for edge annotation based on its frequency in the KEGG database.
+
 
 ## Run data processing work with IsoNet-r image
 
@@ -81,12 +82,12 @@ docker run -it --rm -v "$PWD":/data -u $(id -u ${USER}):$(id -g ${USER}) zhulab/
 - wait till data processing work done
 
 - Explaining `docker run` arguments
-
-- `-v "$PWD":/home/${USER}`: mapping current directory as home directory in docker container
-
-- `-u $(id -u ${USER}):$(id -g ${USER})`: using current user to run the container
-
-- `Rscript ~/run.R`: run run.R in container home directory with `Rscript`  command
+  
+  - `-v "$PWD":/home/${USER}`: mapping current directory as home directory in docker container
+  
+  - `-u $(id -u ${USER}):$(id -g ${USER})`: using current user to run the container
+  
+  - `Rscript ~/run.R`: run run.R in container home directory with `Rscript`  command
 
 ## The result 
 

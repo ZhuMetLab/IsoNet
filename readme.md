@@ -5,16 +5,16 @@
 
 The docker image (https://hub.docker.com/r/zhulab/isonet-r) contains entire environment for running `IsoNet`. For convenience and taking fully use of `IsoNet`, users can pull it and run `IsoNet` just as following.
 
-## What is IsoNet-r
+## What is isonet-r
 
-`IsoNet-r` is a Docker environment to build isotopologue similarity network with `IsoNet` R package. It is based on the [`r-base`](https://hub.docker.com/_/r-base/) docker.
+`isonet-r` is a Docker environment to build isotopologue similarity network with `IsoNet` R package. It is based on the [`r-base`](https://hub.docker.com/_/r-base/) docker.
 
 ## Pulling image
 
-Users can pull the IsoNet-r image with the following script
+Users can pull the isonet-r image with the following script
 
 ```bash
-docker pull zhulab/IsoNet-r
+docker pull zhulab/isonet-r
 ```
 
 ## Data preparation
@@ -64,7 +64,7 @@ constructMIDNet(tracer_table_file = "./Result/isotopologue_pattern_table.csv",
 - `mass_diff_freq_cut_off`: The threshold for delta masses used for edge annotation based on its frequency in the KEGG database.
 
 
-## Run data processing work with IsoNet-r image
+## Run data processing work with isonet-r image
 
 - go to your data folder (e.g., data)
 
@@ -76,7 +76,7 @@ cd data
 
 ```bash
 # MUST keep the code exactly as it is!
-docker run -it --rm -v "$PWD":/data -u $(id -u ${USER}):$(id -g ${USER}) zhulab/IsoNet-r Rscript run.R
+docker run -it --rm -v "$PWD":/data -u $(id -u ${USER}):$(id -g ${USER}) zhulab/isonet-r Rscript run.R
 ```
 
 - wait till data processing work done

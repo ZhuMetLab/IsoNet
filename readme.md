@@ -21,6 +21,7 @@ docker pull zhulab/isonet-r
 
 The data folder should contain isotopologue pattern table (.csv), the identification table of labeled metabolite (.csv) and MS2 sprectra (.msp). Demo files could be downloaded from [https://www.zhulab.cn/usr/uploads/misc/isonet/IsoNet_demo_data.zip].
 
+![Data preparation](imgs/Picture1.png)
 
 ## R script preparation
 To run the data processing, an R script named [run.R](extra/run.R) should be placed in the data folder.
@@ -93,6 +94,8 @@ docker run -it --rm -v "$PWD":/data -u $(id -u ${USER}):$(id -g ${USER}) zhulab/
 
 The main results are listed following:
   - labeled metabolite pairs named "Labeled metabolite pairs.csv". It can be imported into Cytoscape to built a network.
+![Output illustration](imgs/Picture2.png)
+
 
 
 # License

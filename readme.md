@@ -29,15 +29,15 @@ The following files are required by IsoNet for isotopologue similarity networkin
 
 4. MS2 data files (.msp) for MS2 similarity calculation.
 
-Demo files could be downloaded from [https://www.zhulab.cn/usr/uploads/misc/isonet/IsoNet_demo_data.zip].
+Demo files could be downloaded from [https://www.zhulab.cn/usr/uploads/misc/isonet/IsoNet_demo_data.zip] or [https://doi.org/10.5281/zenodo.14911858].
 
 Overview of the data preparation
 ![Data preparation](imgs/Picture1.png)
 
 ## R script preparation
 To run the data processing, an R script named [run.R](extra/run.R) should be placed in the data folder.
-Here we provide an example. Users only need to change tracer_table_file,  ms2_file,  id_table, and sample_names. Other parameters are recommended parameters.
-  
+Here we provide an example.
+
 ```R
 library(IsoNet)
 wd <- '.'
